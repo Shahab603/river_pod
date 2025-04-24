@@ -1,24 +1,27 @@
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class TextStyles {
-  static const TextStyle heading = TextStyle(
+  final String? fontFamilyAll = GoogleFonts.poppins().fontFamily;
+  static  TextStyle heading = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
-    fontFamily: 'Arial',
-    
+    fontFamily: GoogleFonts.lato().fontFamily,
     
   );
 
-  static const TextStyle body = TextStyle(
+  static  TextStyle body = TextStyle(
     fontSize: 16,
-    fontFamily: 'Arial',
+    fontFamily: GoogleFonts.lato().fontFamily,
+    
   );
 
-  static const TextStyle caption = TextStyle(
+  static  TextStyle caption = TextStyle(
     fontSize: 12,
     fontStyle: FontStyle.italic,
-    fontFamily: 'Arial',
+    fontFamily: GoogleFonts.lato().fontFamily,
+    
   );
 }

@@ -9,18 +9,26 @@ class HomeScreen extends ConsumerWidget {
 
   final String title;
 
+  void onSubmit (WidgetRef ref, String value){
+   ref.read(nameProvider.notifier).update((state)=>value);
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref ) {
     final name = ref.watch(nameProvider);
-    final marks = ref.watch(marksProvider);
+    
     return Scaffold(
       appBar: AppBar(title: Text(title, style: TextStyles.heading,), backgroundColor: AppColors.primary,),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Name: $name', style: TextStyles.body,),
-            Text('Marks Obtained: $marks' , style: TextStyles.body,),
+            TextField(
+              onSubmitted: (value)=>onSubmit(ref, value),
+            ),
+            SizedBox(height: 18,),
+            Text('Name: $name', style: TextStyles.heading,),
+            
           ],
         ),
       ),
